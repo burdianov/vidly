@@ -5,7 +5,6 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "@fortawesome/react-fontawesome";
-import Movies from "./components/movies_homework.jsx";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 
