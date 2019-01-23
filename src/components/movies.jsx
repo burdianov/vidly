@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { getMovies } from "../services/fakeMovieService";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Like from "./common/like";
 
 class Movies extends Component {
   state = {
@@ -12,9 +12,16 @@ class Movies extends Component {
     this.setState({ movies });
   };
 
+  handleLike = movie => {
+    const movies = [...this.state.movies];
+    const index = movies.indexOf(movie);
+    movies[index] = { ...movies[index] };
+    movies[index].liked = !movies[index].liked;
+    this.setState({ movies });
+  };
+
   render() {
     const { length: count } = this.state.movies;
-    let solidHeart = false;
     if (count === 0) return <p>There are no movies in the database</p>;
     return (
       <React.Fragment>
@@ -26,7 +33,7 @@ class Movies extends Component {
               <th>Genre</th>
               <th>Stock</th>
               <th>Rate</th>
-              <th>Like</th>
+              <th />
               <th />
             </tr>
           </thead>
@@ -38,10 +45,9 @@ class Movies extends Component {
                 <td>{movie.numberInStock}</td>
                 <td>{movie.dailyRentalRate}</td>
                 <td>
-                  <FontAwesomeIcon
-                    icon={
-                      solidHeart === true ? ["fas", "heart"] : ["far", "heart"]
-                    }
+                  <Like
+                    liked={movie.liked}
+                    onClick={() => this.handleLike(movie)}
                   />
                 </td>
                 <td>
