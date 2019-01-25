@@ -8,6 +8,7 @@ $ npm i --save @fortawesome/free-regular-svg-icons
 $ npm i --save @fortawesome/react-fontawesome
 
 shortcuts:
+imr   : import react
 imrc  : import react component
 cc    : create class
 sfc   : create stateless functional component

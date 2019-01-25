@@ -1,5 +1,4 @@
 import React from "react";
-import { getGenres } from "../../services/fakeGenreService";
 
 const ListGroup = props => {
   const {
@@ -9,12 +8,14 @@ const ListGroup = props => {
     selectedItem,
     onItemSelect
   } = props;
+
   return (
     <ul className="list-group">
       {items.map(item => (
         <li
-          key={item[valueProperty]}
           onClick={() => onItemSelect(item)}
+          key={item[valueProperty]}
+          style={{ cursor: "pointer" }}
           className={
             item === selectedItem ? "list-group-item active" : "list-group-item"
           }
