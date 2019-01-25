@@ -10,6 +10,7 @@ $ npm i --save @fortawesome/react-fontawesome
 shortcuts:
 imrc  : import react component
 cc    : create class
+sfc   : create stateless functional component
 
 $ npm i lodash
 
