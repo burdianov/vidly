@@ -15,3 +15,4 @@ $ npm i lodash
 
 ctrl+p -> @ : view class members
 
+$ npm i prop-types
