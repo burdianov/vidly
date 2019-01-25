@@ -11,4 +11,7 @@ shortcuts:
 imrc  : import react component
 cc    : create class
 
+$ npm i lodash
+
+ctrl+p -> @ : view class members
 
